@@ -1,7 +1,7 @@
 # **Task-1: Face Mask Detection Classifier**
 
 ## **1. Introduction**
-This paart of the project aims to develop a binary classification system to detect whether a person is wearing a face mask or not. Two approaches are compared:  
+This part of the project aims to develop a binary classification system to detect whether a person is wearing a face mask or not. Two approaches are compared:  
 1. **Traditional Machine Learning (ML) Classifiers** with handcrafted features (HOG and color histograms).  
 2. **Convolutional Neural Network (CNN)** with automated feature learning.  
 The goal is to evaluate which method performs better for this task.

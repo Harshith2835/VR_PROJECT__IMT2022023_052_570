@@ -1,4 +1,4 @@
-# Face Mask Detection Classifier
+# **Task-1:Face Mask Detection Classifier**
 
 ## **1. Introduction**
 This paart of the project aims to develop a binary classification system to detect whether a person is wearing a face mask or not. Two approaches are compared:  
@@ -80,10 +80,6 @@ The goal is to evaluate which method performs better for this task.
   - Class imbalance was addressed using stratified sampling.  
   - Overfitting in CNN was mitigated using dropout layers and data augmentation.  
 
----
-
-Here is the complete "How to Run the Code" section formatted as a continuous markdown block:
-
 ## **7. How to Run the Code**
 
 ### Dependencies
@@ -123,9 +119,9 @@ pip install tensorflow scikit-learn opencv-python matplotlib numpy
 
 **Note**: Replace `/path/to/dataset/` with your actual dataset path. Generated plots will be saved automatically in your working directory.
 
+---
 
-
-# Face Mask Segmentation
+# **Task-2:Face Mask Segmentation**
 
 This project implements **image segmentation** using a **pretrained U-Net model** and compares it with **traditional segmentation techniques** such as **Otsu’s Thresholding** and **Canny Edge Detection**. The objective is to evaluate the effectiveness of deep learning-based segmentation methods against traditional approaches.  
 

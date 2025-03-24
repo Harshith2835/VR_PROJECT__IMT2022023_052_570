@@ -40,7 +40,7 @@ Implemented two classical image segmentation techniques:
 
 **Visualization of Traditional Segmentation:**  
 <p align="center">
-  <img src="./output_images2/output_1.png" alt="Traditional Segmentation Output" width="500"/>
+  <img src="./output/output_1.png" alt="Traditional Segmentation Output" width="500"/>
 </p>  
 
 ### **3.3 Deep Learning-Based Segmentation**  
@@ -52,7 +52,7 @@ Implemented two classical image segmentation techniques:
 
 **Visualization of U-Net Segmentation:**  
 <p align="center">
-  <img src="./output_images2/output_2.png" alt="U-Net Segmentation Output" width="500"/>
+  <img src="./output/output_2.png" alt="U-Net Segmentation Output" width="500"/>
 </p>  
 
 ---

@@ -123,16 +123,6 @@ pip install tensorflow scikit-learn opencv-python matplotlib numpy
 
 **Note**: Replace `/path/to/dataset/` with your actual dataset path. Generated plots will be saved automatically in your working directory.
 
-This includes:
-1. Dependency installation  
-2. Dataset directory structure  
-3. Execution command  
-4. Expected output files  
-5. Proper code formatting with triple backticks  
-6. Clear separation between code and descriptions
-
-The entire section is now a single unbroken markdown block with proper syntax highlighting for commands.
-
 
 
 # Face Mask Segmentation
@@ -231,7 +221,5 @@ pip install tensorflow segmentation_models numpy matplotlib opencv-python scikit
 ```  
 
 ### **6.2 Run the Segmentation Pipeline**  
-```bash
-python 3rd_4th_Mini_project.py
-```  
+Run the 3rd_4th_Mini_project.ipynb in colab/jupyter lab
 

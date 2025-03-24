@@ -1,4 +1,141 @@
-# **Deep Learning-Based Image Segmentation using U-Net**  
+# Face Mask Detection Classifier
+
+## **1. Introduction**
+This project aims to develop a binary classification system to detect whether a person is wearing a face mask or not. Two approaches are compared:  
+1. **Traditional Machine Learning (ML) Classifiers** with handcrafted features (HOG and color histograms).  
+2. **Convolutional Neural Network (CNN)** with automated feature learning.  
+The goal is to evaluate which method performs better for this task.
+
+---
+
+## **2. Dataset**
+- **Source**: Kaggle dataset (paths: `/kaggle/input/dataset/dataset/with_mask` and `/kaggle/input/dataset/dataset/without_mask`).  
+- **Structure**:  
+  - Two classes: `with_mask` (labeled as 1) and `without_mask` (labeled as 0).  
+  - Images are resized to `128x128` for CNN and `64x64` for ML models.  
+  - Preprocessing: Normalization (pixel values scaled to `[0, 1]`) and grayscale conversion for feature extraction in ML models.
+
+---
+
+## **3. Methodology**
+### Feature Extraction (ML Models)
+1. **HOG Features**: Extracted using 9 orientations, 8x8 pixels/cell, and L2-Hys normalization.  
+2. **Color Histograms**: Computed in HSV space with 32 bins per channel.  
+3. **Combined Features**: HOG and color histograms concatenated into a single feature vector.  
+
+### Model Training
+- **ML Classifiers**:  
+  - **SVM**: RBF kernel, `C=10`, `gamma='scale'`.  
+  - **Neural Network**: MLP with `(100, 50)` hidden layers, ReLU activation, Adam optimizer.  
+- **CNN Architecture**:  
+  - Three convolutional blocks with Batch Normalization, MaxPooling, and Dropout.  
+  - Fully connected layers with `256` neurons and `softmax` output.  
+  - Data augmentation: Rotation, shifts, flips, and zoom.  
+
+### Evaluation
+- Metrics: Accuracy, precision, recall, F1-score.  
+- Train-test split: `80-20` ratio.  
+
+---
+
+## **4. Hyperparameters and Experiments (CNN)**
+### Hyperparameter Variations
+| Configuration | Learning Rate | Optimizer | Activation | Batch Size | Accuracy |
+|---------------|---------------|-----------|------------|------------|----------|
+| 1             | 0.001         | Adam      | ReLU       | 16         | 0.9575   |
+| 2             | 0.001         | Adam      | ReLU       | 32         | 0.9513   |
+| 3             | 0.1           | Adam      | ReLU       | 16         | 0.9237   |
+| 4             | 0.1           | Adam      | ReLU       | 32         | 0.9237   |
+| 5             | 0.005         | Adam      | ReLU       | 16         | 0.9350   |
+| 6             | 0.005         | Adam      | ReLU       | 32         | 0.8813   |
+
+**Best Configuration**: Config 1 (Accuracy: 95.75%).
+
+---
+
+## **5. Results**
+### Model Comparison
+| Method              | Accuracy |
+|---------------------|----------|
+| SVM                 | 95.23%   |
+| Neural Network (MLP)| 93.64%   |
+| **CNN (Best)**      | **95.75%** |
+
+### Confusion Matrices
+![ML Confusion Matrices](output/ml_confusion_matrices.png)  
+![CNN Confusion Matrix](output/cnn_confusion_matrix.png)  
+
+### Accuracy Comparison Charts
+![ML Accuracy Comparison](output/ml_accuracy_comparison.png)  
+![CNN Configurations Accuracy](output/2cnn_accuracy_comparison.png)  
+
+### CNN and ML Comparison Charts
+![CNN vs ML](output/ml_accuracy_comparison.png)
+---
+
+## **6. Observations and Analysis**
+- **CNN Superiority**: The CNN achieved the highest accuracy (95.75%), outperforming SVM and MLP. This is attributed to its ability to learn spatial hierarchies of features directly from images.  
+- **Challenges**:  
+  - ML models rely on manual feature engineering, which may miss subtle patterns.  
+  - Class imbalance was addressed using stratified sampling.  
+  - Overfitting in CNN was mitigated using dropout layers and data augmentation.  
+
+---
+
+Here is the complete "How to Run the Code" section formatted as a continuous markdown block:
+
+## vii. How to Run the Code
+
+### Dependencies
+```bash
+pip install tensorflow scikit-learn opencv-python matplotlib numpy
+```
+
+### Steps
+1. **Dataset Setup**  
+   Ensure the dataset is structured as:  
+   ```
+   /path/to/dataset/
+     ├── with_mask/
+     │   ├── image1.jpg
+     │   ├── image2.jpg
+     │   └── ...
+     └── without_mask/
+         ├── image1.jpg
+         ├── image2.jpg
+         └── ...
+   ```
+
+2. **Execution**  
+   Run the 1st_2nd_Mini_project.ipynb in colab/jupyter lab.
+
+3. **Outputs**  
+   - Trained CNN model: `best_cnn_model.h5`  
+   - Accuracy plots:  
+     - `ml_accuracy_comparison.png`  
+     - `cnn_accuracy_comparison.png`  
+   - Confusion matrices:  
+     - `ml_confusion_matrices.png`  
+     - `cnn_confusion_matrix.png`  
+   - Training history plot: `cnn_training_history.png`
+
+---
+
+**Note**: Replace `/path/to/dataset/` with your actual dataset path. Generated plots will be saved automatically in your working directory.
+
+This includes:
+1. Dependency installation  
+2. Dataset directory structure  
+3. Execution command  
+4. Expected output files  
+5. Proper code formatting with triple backticks  
+6. Clear separation between code and descriptions
+
+The entire section is now a single unbroken markdown block with proper syntax highlighting for commands.
+
+
+
+# Face Mask Segmentation
 
 This project implements **image segmentation** using a **pretrained U-Net model** and compares it with **traditional segmentation techniques** such as **Otsu’s Thresholding** and **Canny Edge Detection**. The objective is to evaluate the effectiveness of deep learning-based segmentation methods against traditional approaches.  
 

@@ -84,7 +84,7 @@ The goal is to evaluate which method performs better for this task.
 
 Here is the complete "How to Run the Code" section formatted as a continuous markdown block:
 
-## vii. How to Run the Code
+## **7. How to Run the Code**
 
 ### Dependencies
 ```bash

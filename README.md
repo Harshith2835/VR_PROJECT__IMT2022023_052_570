@@ -62,15 +62,15 @@ The goal is to evaluate which method performs better for this task.
 | **CNN (Best)**      | **95.75%** |
 
 ### Confusion Matrices
-![ML Confusion Matrices](output/ml_confusion_matrices.png)  
+![ML Confusion Matrix](output/ml_confusion_matrix.png)  
 ![CNN Confusion Matrix](output/cnn_confusion_matrix.png)  
 
 ### Accuracy Comparison Charts
-![ML Accuracy Comparison](output/ml_accuracy_comparison.png)  
-![CNN Configurations Accuracy](output/2cnn_accuracy_comparison.png)  
+![ML Accuracy Comparison](output/ml_accuracies.png)  
+![CNN Configurations Accuracy](output/cnn_accuracies_diff_config.png)  
 
 ### CNN and ML Comparison Charts
-![CNN vs ML](output/ml_accuracy_comparison.png)
+![CNN vs ML](output/comparision)
 ---
 
 ## **6. Observations and Analysis**

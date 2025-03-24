@@ -70,7 +70,7 @@ The goal is to evaluate which method performs better for this task.
 ![CNN Configurations Accuracy](output/cnn_accuracies_diff_config.png)  
 
 ### CNN and ML Comparison Charts
-![CNN vs ML](output/comparision)
+![CNN vs ML](output/comparision.png)
 ---
 
 ## **6. Observations and Analysis**

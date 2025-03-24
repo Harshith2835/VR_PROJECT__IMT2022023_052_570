@@ -1,7 +1,7 @@
 # Face Mask Detection Classifier
 
 ## **1. Introduction**
-This project aims to develop a binary classification system to detect whether a person is wearing a face mask or not. Two approaches are compared:  
+This paart of the project aims to develop a binary classification system to detect whether a person is wearing a face mask or not. Two approaches are compared:  
 1. **Traditional Machine Learning (ML) Classifiers** with handcrafted features (HOG and color histograms).  
 2. **Convolutional Neural Network (CNN)** with automated feature learning.  
 The goal is to evaluate which method performs better for this task.
@@ -9,7 +9,7 @@ The goal is to evaluate which method performs better for this task.
 ---
 
 ## **2. Dataset**
-- **Source**: Kaggle dataset (paths: `/kaggle/input/dataset/dataset/with_mask` and `/kaggle/input/dataset/dataset/without_mask`).  
+- **Source**: A labeled dataset containing images of people with and without face masks can be accessed here: [dataset](https://github.com/chandrikadeb7/Face-MaskDetection/tree/master/dataset).  
 - **Structure**:  
   - Two classes: `with_mask` (labeled as 1) and `without_mask` (labeled as 0).  
   - Images are resized to `128x128` for CNN and `64x64` for ML models.  

@@ -33,7 +33,7 @@ The goal is to evaluate which method performs better for this task.
   - Data augmentation: Rotation, shifts, flips, and zoom.  
 
 ### Evaluation
-- Metrics: Accuracy, precision, recall, F1-score.  
+- Metrics: Accuracy.  
 - Train-test split: `80-20` ratio.  
 
 ---
